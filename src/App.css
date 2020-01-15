@@ -2,37 +2,56 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+header {
+  height: 75px;
+  background-color: blanchedalmond;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 0px 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+img {
+  height: 50px;
+  width: 50px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* This hides the mobile nav initially */
+#mobile-nav {
+  display: none;
+}
+
+/* dropdown should contain an animation name and duration */
+#dropdown {
+  height: 100px;
+  width: 100%;
+  position: fixed;
+  top: 75px;
+  left: 0px;
+  background-color: teal;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  animation: open 500ms;
+  overflow: hidden;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
+/* keyframes is where the animation is built, can use from/to or percentages, depending on how customized you need the animation to be. */
+@keyframes open {
   from {
-    transform: rotate(0deg);
+    height: 0px;
   }
   to {
-    transform: rotate(360deg);
+    height: 100px;
+  }
+}
+
+/* This media query will only display these selected styles up to 480px screen-width */
+@media(max-width: 480px){
+  #desktop-nav {
+    display: none;
+  }
+  #mobile-nav {
+    display: initial;
   }
 }
